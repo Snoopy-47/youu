@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Image-Slider</title>
+</head>
+<body>
+
+    <div class="container">
+        <span class="slider" id="slider1"></span>
+        <span class="slider" id="slider2"></span>
+        <span class="slider" id="slider3"></span>
+        <span class="slider" id="slider4"></span>
+        <span class="slider" id="slider5"></span>
+        <span class="slider" id="slider6"></span>
+        <span class="slider" id="slider7"></span>
+
+        <div class="imgContainer">
+        
+            <div class="slide_div" id="slide_1">
+                <img src="image4.jpg" alt="" class="img" id="img1">
+                <a href="#slider1" class="button" id="button1" autoplay="true"></a>
+                <audio id="audio1" autoplay="true" src="ChannaVe.mp3"></audio>
+            </div>
+
+            <div class="slide_div" id="slide_2">
+                <img src="image2.jpg" alt="" class="img" id="img2">
+                <a href="#slider2" class="button" id="button2"></a>
+                <audio id="audio2" src="Pahadonmein.mp3"></audio>
+            </div>
+
+            <div class="slide_div" id="slide_3">
+                <img src="image1.jpg" alt="" class="img" id="img3">
+                <a href="#slider3" class="button" id="button3"></a>
+                <audio id="audio3" src="MeraBanegaTu.mp3"></audio>
+            </div>
+
+            <div class="slide_div" id="slide_4">
+                <img src="image3.jpg" alt="" class="img" id="img4">
+                <a href="#slider4" class="button" id="button4"></a>
+                <audio id="audio4" src="Khairaan.mp3"></audio>
+            </div>
+
+            <div class="slide_div" id="slide_5">
+                <img src="image5.jpg" alt="" class="img" id="img5">
+                <a href="#slider5" class="button" id="button5"></a>
+                <audio id="audio5" src="TeraMeraRishta.mp3"></audio>
+            </div>
+
+            <div class="slide_div" id="slide_6">
+                <img src="image6.jpg" alt="" class="img" id="img6">
+                <a href="#slider6" class="button" id="button6"></a>
+                <audio id="audio6" src="MereJaaniya.mp3"></audio>
+            </div>
+
+            <div class="slide_div" id="slide_7">
+                <img src="image7.jpg" alt="" class="img" id="img7">
+                <a href="#slider7" class="button" id="button7"></a>
+                <audio id="audio7" src="Bariyan.mp3"></audio>
+            </div>
+     
+        </div>
+        
+        <!-- Add a message container -->
+        <div class="message-container" id="messageContainer"></div>
+        
+
+    </div>
+    <script>
+      
+        document.querySelectorAll('.button').forEach((button, index) => {
+            button.addEventListener('click', () => {
+                // Pause all other audio elements
+                document.querySelectorAll('audio').forEach(audio => {
+                    audio.pause();
+                });
+                // Play the corresponding audio for the clicked image
+                document.getElementById(`audio${index + 1}`).play();
+
+                // Show specific message for each image
+                const messages = [
+                    "Happiest Birthday Gulluuuuu😘😘😘😘😘😘",
+                    "Thank-you so much baby humesha aise hi mere sath rehne ke liye tum Lo Puchhiiiii😘😘😘😘😘😘😘",
+                    "Aise hi raha karo baby humesha khush achche lgte h ek dum gappu se 😙👀",
+                    "Humesha aise hi mere sath rehna baby haan kabhi kabhi bohot ladayi hoti hai per main humesha tumhare sath rhungi 😘😘🤗",
+                    "Kyuki agar main chali gyi toh tum boar hojaoge na gullu 😗😗",
+                    "Waise Ek baat bole tum kitna bhi ldd jhagad lo main tumko kbhi nii chhodungi baby Main Chali gayi toh tumko Pareshaan kon Karega baby😗",
+                    "And at the end ab khatam bhi karne do pgluu tum humesha mere sath rho khush raho aur hum aisai sath mein rahe I LOVE YOU BABY 🥰😘😚🤗"
+                    // Add more specific messages as needed
+                ];
+                showMessage(messages[index]);
+            });
+        });
+
+        // Function to show a message
+        function showMessage(message) {
+            // Create message element
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+            messageElement.textContent = message;
+            // Clear previous messages
+            document.getElementById('messageContainer').innerHTML = '';
+            // Append message element to container
+            document.getElementById('messageContainer').appendChild(messageElement);
+            setTimeout(() => {
+                messageElement.remove();
+            }, 10000);
+        }
+        window.addEventListener('load', () => {
+    document.getElementById('button1').click();
+});
+    </script>
+</body>
+</html>

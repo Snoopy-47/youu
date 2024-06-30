@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter</title>
+    <link rel="stylesheet" href="./birthday.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Hey Baby..!</strong>
+                        <p>
+                            Wishing you a Very Happy Birthday Gulluu😘🤗💕Sending all the love and warmest wishes on your special day 
+                            💞🤗🤗🤗😚😚always be happy and get all the things that you
+                            want in your life I'am always with you LOVE  YOU SO  MUCH  BABY....😘😘🤗🤗
+                            umaaahhh  umaaah umaahhh.....😘😘😘😘😘😘
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+    
+    <button><a href="birthday2.html">Click here cutie</a></button>
+    
+    <div class="instructions">
+        <ol>
+            <li>Click on the heart symbol ❤</li>
+            <li>Click on the "Click here" button</li>
+            <li>Rotate your phone for a magical experience!😉</li>
+        </ol>
+    </div>
+
+    <!-- Audio element for music -->
+    <audio id="audio" src="nazar.mp3"></audio>
+
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        const audio = document.getElementById('audio');
+
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        });
+    </script>
+</body>
+</html>
